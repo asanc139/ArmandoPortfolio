@@ -4,7 +4,7 @@ import logo from '../images/logo.jpeg';
 const Header = () => {
   return (
     <header className="header">
-      <img className="logo" src={logo} alt="Michael Yeates' Logo" />
+      <img className="logo" src={logo} alt="logo" />
       <NavLinks />
     </header>
   );
