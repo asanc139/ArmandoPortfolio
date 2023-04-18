@@ -4,7 +4,7 @@ import landingImage from '../../images/xenia-radchenko-ezEn4jYrVYQ-unsplash.jpg'
 import secondLandingImage from '../../images/secondLandingImage.jpg';
 import SocialIcons from '../../components/SocialIcons';
 
-const Landing = ({ name }) => {
+const Landing = ({ name, tagline }) => {
   const styles = {
     landing: {
       height: 'calc(100% - 93px)',
@@ -49,6 +49,11 @@ const Landing = ({ name }) => {
     },
   };
 
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
     <section className="landing" style={styles.landing}>
       <div className="textContainer" style={styles.textContainer}>
@@ -92,9 +97,10 @@ const Landing = ({ name }) => {
           transition={{ duration: 1, ease: 'easeInOut' }}
           style={styles.landingImage}
           src={landingImage}
-          alt="Michael Yeates"
+          alt=""
         />
       </div>
+
       <SocialIcons />
     </section>
   );
