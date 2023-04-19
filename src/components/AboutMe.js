@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import SocialIcons from '../components/SocialIcons';
 import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
-import resume from '../pages/about/newresume.pdf';
+import resume from '../pages/about/NewResume.pdf';
+import Resume from './Resume';
 //import Resume from './Resume';
 
 const AboutMe = ({ name, email, location, availability, brand }) => {
@@ -23,7 +24,7 @@ const AboutMe = ({ name, email, location, availability, brand }) => {
 
     const link = document.createElement('a');
     link.href = resume;
-    link.download = 'Newresume.pdf';
+    link.download = 'NewResume.pdf';
     link.onload = () => {
       link.remove();
       setDownloading(false);
@@ -92,6 +93,7 @@ const AboutMe = ({ name, email, location, availability, brand }) => {
               >
                 {downloading ? 'Downloading...' : 'Download Resume'}
               </button>{' '}
+              <Resume />
               <SocialIcons />
             </div>
           </div>
