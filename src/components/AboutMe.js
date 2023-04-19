@@ -21,7 +21,7 @@ const AboutMe = ({ name, email, location, availability, brand }) => {
     setDownloading(true);
     const link = document.createElement('a');
     link.href = resume;
-    link.download = '';
+    link.download = 'newresume.pdf';
     link.onload = () => {
       link.remove();
       setDownloading(false);
